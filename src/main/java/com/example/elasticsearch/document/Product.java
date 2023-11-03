@@ -1,15 +1,15 @@
 package com.example.elasticsearch.document;
 
-import com.example.elasticsearch.dto.ProductUpdateRequestDto;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Document(indexName = "product_index")
 public class Product {
 
