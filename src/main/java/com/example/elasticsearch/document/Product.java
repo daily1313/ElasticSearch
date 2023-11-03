@@ -18,10 +18,9 @@ public class Product {
     private int quantity;
     private double price;
 
-    public void updateProduct(final ProductUpdateRequestDto productUpdateRequestDto) {
-        this.id = productUpdateRequestDto.getId();
-        this.productName = productUpdateRequestDto.getProductName();
-        this.quantity = productUpdateRequestDto.getQuantity();
-        this.price = productUpdateRequestDto.getPrice();
+    public void updateProduct(final String productName, final int quantity, final double price) {
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
     }
 }

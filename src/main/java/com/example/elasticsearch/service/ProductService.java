@@ -49,7 +49,8 @@ public class ProductService {
     public ProductResponseDto updateProduct(final ProductUpdateRequestDto productUpdateRequestDto, final int id) {
         Product product = productRepository.findById(id);
         checkFindProductIsEmpty(product);
-        product.updateProduct(productUpdateRequestDto);
+        product.updateProduct(productUpdateRequestDto.getProductName(), productUpdateRequestDto.getQuantity(),
+                productUpdateRequestDto.getPrice());
         productRepository.save(product);
         return ProductResponseDto.toDto(product);
     }
